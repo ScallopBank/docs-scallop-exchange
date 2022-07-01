@@ -8,17 +8,17 @@ Endpoints under **Public** section can be accessed freely without requiring any 
 
 <details>
 
-<summary>Test Connectivity </summary>
+<summary>Test Connectivity</summary>
 
 This endpoint checks connectivity to the host
 
 sdk:[https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/TestConnectivity.java](https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/TestConnectivity.java)
 
-#### Parameters
+**Parameters**
 
-#### Responses
+**Responses**
 
-* 200                                                           Connection Normal&#x20;
+* 200 Connection Normal
 
 ```
 {}
@@ -34,11 +34,11 @@ This endpoint checks connectivity to the server and retrieves server timestamp
 
 sdk:[https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/CheckServerTime.java](https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/CheckServerTime.java)
 
-#### Parameters
+**Parameters**
 
-#### Responses
+**Responses**
 
-* 200                                                         Successfully retrieved server time &#x20;
+* 200 Successfully retrieved server time
 
 ```
 {
@@ -55,11 +55,11 @@ sdk:[https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/s
 
 sdk:[https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/PairsList.java](https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/PairsList.java)
 
-#### Parameters
+**Parameters**
 
-#### Responses
+**Responses**
 
-* 200                                                       Successfully retrieved pairs list
+* 200 Successfully retrieved pairs list
 
 ```
 {
@@ -103,8 +103,6 @@ sdk:[https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/s
 }
 ```
 
-
-
 </details>
 
 | Name              | Type    | Example   | Description                     |
@@ -117,7 +115,7 @@ sdk:[https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/s
 
 ## Market
 
-### Security Type: [None](broken-reference)
+### Security Type: [None](broken-reference/)
 
 **Market** section can be accessed freely without requiring any API-key or signatures.
 
@@ -125,29 +123,29 @@ sdk:[https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/s
 
 <summary>Depth</summary>
 
-#### market depth data
+**market depth data**
 
 sdk:[https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/Depth.java](https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/Depth.java)
 
-#### Parameters
+**Parameters**
 
-#### Query
+**Query**
 
-limit                             integer                                                   Default 100; Max 100&#x20;
+limit integer Default 100; Max 100
 
-symbol                        string                                                     Symbol Name E.g. BTCUSDT
+symbol string Symbol Name E.g. BTCUSDT
 
-#### Responses
+**Responses**
 
-* 200                              Successfully retrieved market depth data&#x20;
+* 200 Successfully retrieved market depth data
 
 </details>
 
-| Name | Type  | Example         | Description                                                     |
-| ---- | ----- | --------------- | --------------------------------------------------------------- |
-| time |  long | `1595563624731` | Current timestamp (ms)                                          |
-| bids | list  | ;               | List of all bids, best bids first. See below for entry details. |
-| asks | list  | ;               | List of all asks, best asks first. See below for entry details. |
+| Name | Type | Example         | Description                                                     |
+| ---- | ---- | --------------- | --------------------------------------------------------------- |
+| time | long | `1595563624731` | Current timestamp (ms)                                          |
+| bids | list | ;               | List of all bids, best bids first. See below for entry details. |
+| asks | list | ;               | List of all asks, best asks first. See below for entry details. |
 
 The fields bids and asks are lists of order book price level entries, sorted from best to worst.
 
@@ -164,15 +162,15 @@ The fields bids and asks are lists of order book price level entries, sorted fro
 
 sdk:[https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/Ticker.java](https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/Ticker.java)
 
-#### Parameters
+**Parameters**
 
-#### Query
+**Query**
 
-symbol                             string                                      Symbol Name. E.g. `BTCUSDT`
+symbol string Symbol Name. E.g. `BTCUSDT`
 
-#### Responses
+**Responses**
 
-* 200                              Successfully retrieved market ticker data&#x20;
+* 200 Successfully retrieved market ticker data
 
 ```
 {
@@ -186,8 +184,6 @@ symbol                             string                                      S
 ```
 
 </details>
-
-
 
 | Name | Type  | Example         | Description  |
 | ---- | ----- | --------------- | ------------ |
@@ -203,17 +199,17 @@ symbol                             string                                      S
 
 sdk:[https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/RecentTradesList.java](https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/RecentTradesList.java)
 
-#### Parameters
+**Parameters**
 
-#### Query
+**Query**
 
-symbol                             string                                      Symbol Name. E.g. `BTCUSDT`
+symbol string Symbol Name. E.g. `BTCUSDT`
 
-Limit                                 string                                      Default 100;MAX 1000
+Limit string Default 100;MAX 1000
 
-#### Responses
+**Responses**
 
-* 200 &#x20;
+* 200
 
 ```
 [
@@ -241,17 +237,17 @@ Limit                                 string                                    
 
 sdk:[https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/KlineCandlestickData.java](https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/KlineCandlestickData.java)
 
-### Parameters
+#### Parameters
 
-#### Query
+**Query**
 
-symbol-string- String-Symbol Name  E.g. `BTCUSDT`
+symbol-string- String-Symbol Name E.g. `BTCUSDT`
 
 Interval-string-Interval of the Kline. Possible values include: `1min`,`5min`,`15min`,`30min`,`60min`,`1day`,`1week`,`1month`
 
 limit-integer-Default 100;MAX 300
 
-#### Responses
+**Responses**
 
 * 200
 
@@ -284,30 +280,24 @@ limit-integer-Default 100;MAX 300
 ]
 ```
 
-
-
-
-
 </details>
 
 ### Responses
 
-
-
-| Name    | Type  | Example         | Description  |
-| ------- | ----- | --------------- | ------------ |
-| `IDX`   | long  | `1538728740000` | Open time    |
-| `open`  | float | `36.00000`      | Open price   |
-| `close` | float | `33.00000`      | close price  |
-| `high`  | float | `36.00000`      | high price   |
-| `low`   | float | `30.00000`      | low price    |
-| `vol`   | float | `2456.111`      | volume       |
+| Name    | Type  | Example         | Description |
+| ------- | ----- | --------------- | ----------- |
+| `IDX`   | long  | `1538728740000` | Open time   |
+| `open`  | float | `36.00000`      | Open price  |
+| `close` | float | `33.00000`      | close price |
+| `high`  | float | `36.00000`      | high price  |
+| `low`   | float | `30.00000`      | low price   |
+| `vol`   | float | `2456.111`      | volume      |
 
 ## Trade
 
-### Security Type: [TRADE](broken-reference)
+### Security Type: [TRADE](broken-reference/)
 
-Endpoints under **Trade** require an [API-key and a signature.](broken-reference)
+Endpoints under **Trade** require an [API-key and a signature.](broken-reference/)
 
 <details>
 
@@ -317,35 +307,35 @@ Endpoints under **Trade** require an [API-key and a signature.](broken-reference
 
 **sdk:**[**https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/NewOrder.java**](https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/NewOrder.java)
 
-### **Parameters**&#x20;
+#### **Parameters**
 
 **Header**
 
-X-CH-SIGN                                  string                                                     Sign&#x20;
+X-CH-SIGN string Sign
 
-X-CH-APIKEY                              string                                                     Your API-key&#x20;
+X-CH-APIKEY string Your API-key
 
-X-CH-TS                                      integer                                                   timestamp
+X-CH-TS integer timestamp
 
-#### **Body**
+**Body**
 
-symbol   ****          ``       string                  Symbol Name. E.g. `BTCUSDT`
+symbol \*\*\*\* \`\` string Symbol Name. E.g. `BTCUSDT`
 
-volume                   number              Order vol. For MARKET BUY orders, vol=amount.
+volume number Order vol. For MARKET BUY orders, vol=amount.
 
-side                        string                 Side of the order,`BUY/SELL`
+side string Side of the order,`BUY/SELL`
 
-type                       string                  Type of the order, `LIMIT/MARKET`
+type string Type of the order, `LIMIT/MARKET`
 
-price                      number              Order price, REQUIRED for LIMIT orders
+price number Order price, REQUIRED for LIMIT orders
 
-newClientOrderId string                 Unique order ID generated by users to mark their orders
+newClientOrderId string Unique order ID generated by users to mark their orders
 
-recvWindow         integer                Time window
+recvWindow integer Time window
 
-#### Responses
+**Responses**
 
-* 200                                   Successfully post new order
+* 200 Successfully post new order
 
 ```
 {
@@ -361,8 +351,6 @@ recvWindow         integer                Time window
     'side': 'SELL'
 }
 ```
-
-
 
 </details>
 
@@ -388,42 +376,40 @@ Test new order creation and signature/recvWindow length. Creates and validates a
 sdk：[https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/TestNewOrder.java\
 ](https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/TestNewOrder.java)
 
-### Parameters
+#### Parameters
 
-#### Header
+**Header**
 
-X-CH-SIGN                          string                 Sign&#x20;
+X-CH-SIGN string Sign
 
-X-CH-APIKEY                      string                 Your API-key&#x20;
+X-CH-APIKEY string Your API-key
 
-X-CH-TS                              integer                timestamp
+X-CH-TS integer timestamp
 
-#### Body
+**Body**
 
-recvWindow           integer                    Timewindow
+recvWindow integer Timewindow
 
-symbol                    string                      Symbol Name. E.g. `BTCUSDT`
+symbol string Symbol Name. E.g. `BTCUSDT`
 
-volume                    number                  Order vol. For MARKET BUY orders, vol=amount.
+volume number Order vol. For MARKET BUY orders, vol=amount.
 
-side                         string                      Side of the order, `BUY/SELL`&#x20;
+side string Side of the order, `BUY/SELL`
 
-type                         string                     Type of the order, `LIMIT/MARKET`&#x20;
+type string Type of the order, `LIMIT/MARKET`
 
-price                        number                  Order price, REQUIRED for `LIMIT` orders
+price number Order price, REQUIRED for `LIMIT` orders
 
-newClientOrderId   string                     Unique order ID generated by users to mark their\
-&#x20;                                                               orders.&#x20;
+newClientOrderId string Unique order ID generated by users to mark their\
+orders.
 
-#### Responses
+**Responses**
 
-* 200                               Successfully test new order
+* 200 Successfully test new order
 
 ```
 {}
 ```
-
-
 
 </details>
 
@@ -435,25 +421,25 @@ newClientOrderId   string                     Unique order ID generated by users
 
 sdk:[https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/BatchOrders.java](https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/BatchOrders.java)
 
-#### Parameters
+**Parameters**
 
-#### Header
+**Header**
 
-X-CH-SIGN                          string                 Sign&#x20;
+X-CH-SIGN string Sign
 
-X-CH-APIKEY                      string                 Your API-key&#x20;
+X-CH-APIKEY string Your API-key
 
-X-CH-TS                              integer                timestamp
+X-CH-TS integer timestamp
 
-#### Body
+**Body**
 
-orders            array         Batch order param
+orders array Batch order param
 
-symbol          string        Symbol Name. E.g. `BTCUSDT`&#x20;
+symbol string Symbol Name. E.g. `BTCUSDT`
 
-#### Responses
+**Responses**
 
-* &#x20;200&#x20;
+* 200
 
 ```
 {
@@ -464,8 +450,6 @@ symbol          string        Symbol Name. E.g. `BTCUSDT`&#x20;
     ]
 }
 ```
-
-
 
 </details>
 
@@ -482,30 +466,30 @@ symbol          string        Symbol Name. E.g. `BTCUSDT`&#x20;
 
 <summary>Query Order</summary>
 
-&#x20;**Rate Limit: 20times/2s**
+**Rate Limit: 20times/2s**
 
 **sdk：**[**https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/QueryOrder.java**](https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/QueryOrder.java)
 
-### **Parameters**
+#### **Parameters**
 
 **Query**
 
-orderId ****                       string                      Order ID
+orderId \*\*\*\* string Order ID
 
-symbol                    string                      Symbol Name. E.g. `BTCUSDT`
+symbol string Symbol Name. E.g. `BTCUSDT`
 
-newClientOrderId   string                     Unique order ID generated by users to mark their\
-&#x20;                                                               orders.&#x20;
+newClientOrderId string Unique order ID generated by users to mark their\
+orders.
 
-#### Header
+**Header**
 
-X-CH-SIGN                          string                 Sign&#x20;
+X-CH-SIGN string Sign
 
-X-CH-APIKEY                      string                 Your API-key&#x20;
+X-CH-APIKEY string Your API-key
 
-X-CH-TS                              integer                timestamp
+X-CH-TS integer timestamp
 
-#### Responses
+**Responses**
 
 * 200
 
@@ -524,8 +508,6 @@ X-CH-TS                              integer                timestamp
     'transactTime': '1574327555669'
 }
 ```
-
-
 
 </details>
 
@@ -552,9 +534,9 @@ X-CH-TS                              integer                timestamp
 
 **sdk:**[**https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/CancelOrder.java**](https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/CancelOrder.java)
 
-### Parameters
+#### Parameters
 
-#### **Header**
+**Header**
 
 X-CH-SIGN string Sign
 
@@ -564,16 +546,16 @@ X-CH-TS integer timestamp
 
 **Query**
 
-orderId                    string                      Order ID
+orderId string Order ID
 
-symbol                    string                      Symbol Name. E.g. BTCUSDT
+symbol string Symbol Name. E.g. BTCUSDT
 
-newClientOrderId  string                      Unique order ID generated by users to mark their \
-&#x20;                                                              orders.&#x20;
+newClientOrderId string Unique order ID generated by users to mark their\
+orders.
 
-#### Responses
+**Responses**
 
-* 200                                                 Cancelled order successfully
+* 200 Cancelled order successfully
 
 ```
 {
@@ -582,16 +564,11 @@ newClientOrderId  string                      Unique order ID generated by users
     'orderId': '499890200602846976', 
     'status': 'CANCELED'
 }
-
 ```
-
-
 
 </details>
 
 ### Response:
-
-
 
 | Name            | Type   | Example              | Description                                                                                                     |
 | --------------- | ------ | -------------------- | --------------------------------------------------------------------------------------------------------------- |
@@ -608,9 +585,9 @@ newClientOrderId  string                      Unique order ID generated by users
 
 **sdk:**[**https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/BatchCancelOrders.java**](https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/BatchCancelOrders.java)
 
-### **Parameters**
+#### **Parameters**
 
-#### **Header**
+**Header**
 
 X-CH-SIGN string Sign
 
@@ -620,13 +597,13 @@ X-CH-TS integer timestamp
 
 **Query**
 
-orderId ****        string                       Order ID
+orderId \*\*\*\* string Order ID
 
-symbol        string                       Symbol Name. E.g. BTCUSDT&#x20;
+symbol string Symbol Name. E.g. BTCUSDT
 
-#### Responses
+**Responses**
 
-* 200&#x20;
+* 200
 
 ```
 {
@@ -653,11 +630,11 @@ symbol        string                       Symbol Name. E.g. BTCUSDT&#x20;
 
 **Parameters**
 
-**Query**&#x20;
+**Query**
 
-symbol ****             string               Symbol Name. E.g. BTCUSDT
+symbol \*\*\*\* string Symbol Name. E.g. BTCUSDT
 
-Limit                Integer             Default 100; Max 1000
+Limit Integer Default 100; Max 1000
 
 **Header**
 
@@ -667,9 +644,9 @@ X-CH-APIKEY string Your API-key
 
 X-CH-TS integer timestamp
 
-#### Responses
+**Responses**
 
-* 200&#x20;
+* 200
 
 ```
 [
@@ -709,19 +686,19 @@ X-CH-TS integer timestamp
 
 <summary>Trades</summary>
 
-&#x20;**Rate Limt: 20times/2s**
+**Rate Limt: 20times/2s**
 
 **sdk:**[**https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/Trades.java**](https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/Trades.java)
 
-### **Parameters**
+#### **Parameters**
 
-**Query**&#x20;
+**Query**
 
-symbol ****             string               Symbol Name. E.g. BTCUSDT
+symbol \*\*\*\* string Symbol Name. E.g. BTCUSDT
 
-Limit                Integer             Default 100; Max 1000
+Limit Integer Default 100; Max 1000
 
-fromId             Integer             Trade ID to fetch from
+fromId Integer Trade ID to fetch from
 
 **Header**
 
@@ -731,7 +708,7 @@ X-CH-APIKEY string Your API-key
 
 X-CH-TS integer timestamp
 
-#### Responses
+**Responses**
 
 * 200
 
@@ -773,9 +750,9 @@ X-CH-TS integer timestamp
 
 ## Account
 
-### Security Type:[ USER\_DATA](broken-reference)
+### Security Type:[ USER\_DATA](broken-reference/)
 
-Endpoints under Account require an [API-key and a signature.](broken-reference)
+Endpoints under Account require an [API-key and a signature.](broken-reference/)
 
 <details>
 
@@ -785,9 +762,9 @@ Endpoints under Account require an [API-key and a signature.](broken-reference)
 
 **sdk:**[**https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/AccountInformation.java**](https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/spot/AccountInformation.java)
 
-### Parameters
+#### Parameters
 
-#### **Header**
+**Header**
 
 X-CH-SIGN string Sign
 
@@ -797,7 +774,7 @@ X-CH-TS integer timestamp
 
 Responses
 
-* 200                            Successfully retrieved account information.&#x20;
+* 200 Successfully retrieved account information.
 
 ```
 {
@@ -819,11 +796,11 @@ Responses
 
 </details>
 
-Response:&#x20;
+Response:
 
-| Name       | Type | Description            |
-| ---------- | ---- | ---------------------- |
-| `balances` | \[ ] |  Show balance details  |
+| Name       | Type | Description          |
+| ---------- | ---- | -------------------- |
+| `balances` | \[ ] | Show balance details |
 
 #### `balances` field:
 
@@ -832,4 +809,3 @@ Response:&#x20;
 | `asset`  | string | `USDT`  | Name of the asset               |
 | `free`   | float  | 1000.30 | Amount available for use        |
 | `locked` | float  | 400     | Amount locked (for open orders) |
-

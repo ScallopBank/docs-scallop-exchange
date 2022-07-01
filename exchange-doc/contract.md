@@ -2,7 +2,7 @@
 
 ## Public
 
-### Security: [None](broken-reference)
+### Security: [None](broken-reference/)
 
 Endpoints under **Public** section can be accessed freely without requiring any API-key or signatures.
 
@@ -10,13 +10,13 @@ Endpoints under **Public** section can be accessed freely without requiring any 
 
 <summary>Test connectivity</summary>
 
-This endpoint checks connectivity to the host.&#x20;
+This endpoint checks connectivity to the host.
 
-### Parameters
+#### Parameters
 
-#### Responses
+**Responses**
 
-* 200&#x20;
+* 200
 
 ```
 {}
@@ -28,9 +28,9 @@ This endpoint checks connectivity to the host.&#x20;
 
 <summary>Check server time</summary>
 
-### Parameters
+#### Parameters
 
-#### Responses
+**Responses**
 
 * 200
 
@@ -54,9 +54,9 @@ This endpoint checks connectivity to the host.&#x20;
 
 <summary>Contract List</summary>
 
-### Parameters
+#### Parameters
 
-#### Responses
+**Responses**
 
 * 200
 
@@ -81,11 +81,7 @@ This endpoint checks connectivity to the host.&#x20;
 ]
 ```
 
-
-
 </details>
-
-
 
 | Name            | Type   | Example      | Description                                                                       |
 | --------------- | ------ | ------------ | --------------------------------------------------------------------------------- |
@@ -111,21 +107,21 @@ Market section can be accessed freely without requiring any API-key or signature
 
 <details>
 
-<summary>Depth </summary>
+<summary>Depth</summary>
 
-**Market depth data**&#x20;
+**Market depth data**
 
-### Parameters
+#### Parameters
 
-#### Query&#x20;
+**Query**
 
-limit                           integer                            Default 100, Max 100
+limit integer Default 100, Max 100
 
-&#x20;Contract name        string                              Contract Name E.g. E-BTC-USDT
+Contract name string Contract Name E.g. E-BTC-USDT
 
-#### Response
+**Response**
 
-* 200                                                             Successfully retrieve market depth data
+* 200 Successfully retrieve market depth data
 
 ```
 {
@@ -154,11 +150,11 @@ limit                           integer                            Default 100, 
 
 </details>
 
-| Name  | Type  | Example         | Description              |
-| ----- | ----- | --------------- | ------------------------ |
-| time  |  long | `1595563624731` | Current timestamp (ms)   |
-| birds | list  | look below      | Order book purchase info |
-| asks  | list  | look below      | Order book selling info  |
+| Name  | Type | Example         | Description              |
+| ----- | ---- | --------------- | ------------------------ |
+| time  | long | `1595563624731` | Current timestamp (ms)   |
+| birds | list | look below      | Order book purchase info |
+| asks  | list | look below      | Order book selling info  |
 
 The fields bids and asks are lists of order book price level entries, sorted from best to worst.
 
@@ -173,15 +169,15 @@ The fields bids and asks are lists of order book price level entries, sorted fro
 
 24 hour price change statistics
 
-### Parameters
+#### Parameters
 
 **Query**
 
-symbol                 string                              Symbol Name. E.g. BTCUSDT
+symbol string Symbol Name. E.g. BTCUSDT
 
-#### Responses
+**Responses**
 
-* &#x20;200                                                       Successfully obtain ticker info
+* 200 Successfully obtain ticker info
 
 ```
 {
@@ -211,17 +207,17 @@ symbol                 string                              Symbol Name. E.g. BTC
 
 <summary>Get index/marked price</summary>
 
-### Parameters
+#### Parameters
 
-#### Query&#x20;
+**Query**
 
-limit                           integer                            Default 100, Max 100
+limit integer Default 100, Max 100
 
-&#x20;Contract name        string                              Contract Name E.g. E-BTC-USDT
+Contract name string Contract Name E.g. E-BTC-USDT
 
-#### Responses
+**Responses**
 
-* 200&#x20;
+* 200
 
 ```
 {
@@ -250,17 +246,17 @@ limit                           integer                            Default 100, 
 
 **Query**
 
-Contract Name            string                      Contract Name. E.g. BTCUSDT
+Contract Name string Contract Name. E.g. BTCUSDT
 
-Limit                             Integer                    Default 100; Max 1000
+Limit Integer Default 100; Max 1000
 
-interval                         string                      K-line interval, identifies the sent value as:\
-&#x20;                                                                    `1min`,`5min`,`15min`,`30min`,`1h`, `1day,`\
-&#x20;                                                                    `1week`,`1month`
+interval string K-line interval, identifies the sent value as:\
+`1min`,`5min`,`15min`,`30min`,`1h`, `1day,`\
+`1week`,`1month`
 
-#### Responses
+**Responses**
 
-* 200&#x20;
+* 200
 
 ```
 [
@@ -308,7 +304,7 @@ interval                         string                      K-line interval, id
 
 ### Security: [TRADE](https://exdocs.gitbook.io/v/general-info#jie-kou-jian-quan-lei-xing)​ <a href="#an-quan-lei-xing-trade" id="an-quan-lei-xing-trade"></a>
 
-&#x20;All interfaces under the transaction require [signature and API-key verification​.](https://exdocs.gitbook.io/v/v/english/general-info#signed-trade-yu-userdata-endpoint-security)
+All interfaces under the transaction require [signature and API-key verification​.](https://exdocs.gitbook.io/v/v/english/general-info#signed-trade-yu-userdata-endpoint-security)
 
 <details>
 
@@ -316,39 +312,39 @@ interval                         string                      K-line interval, id
 
 Creation of single new orders
 
-### **Parameters**&#x20;
+#### **Parameters**
 
 **Header**
 
-X-CH-SIGN                                  string                                                     Sign&#x20;
+X-CH-SIGN string Sign
 
-X-CH-APIKEY                              string                                                     Your API-key&#x20;
+X-CH-APIKEY string Your API-key
 
-X-CH-TS                                      integer                                                   timestamp
+X-CH-TS integer timestamp
 
-#### Body
+**Body**
 
-volume                   number            Order quantity
+volume number Order quantity
 
-price                       number            Order price
+price number Order price
 
-contractName       string               Contract name E.g. `E-BTC-USDT`
+contractName string Contract name E.g. `E-BTC-USDT`
 
-type                        string               Order type, `LIMIT/MARKET`
+type string Order type, `LIMIT/MARKET`
 
-side                        string               trade direction, `BUY/SELL`
+side string trade direction, `BUY/SELL`
 
-open                       string               Open balancing direction, `OPEN/CLOSE`
+open string Open balancing direction, `OPEN/CLOSE`
 
-positionType          number           Hold-up position, 1 Full position 2 restrictive position
+positionType number Hold-up position, 1 Full position 2 restrictive position
 
-clientOrderId          string              Client order identity, a string with length less than 32 bit ``&#x20;
+clientOrderId string Client order identity, a string with length less than 32 bit \`\`
 
-timeInForce             string              `IOC, FOK, POST_ONLYBody`
+timeInForce string `IOC, FOK, POST_ONLYBody`
 
-#### Responses
+**Responses**
 
-* 200&#x20;
+* 200
 
 ```
 {
@@ -368,41 +364,41 @@ timeInForce             string              `IOC, FOK, POST_ONLYBody`
 
 <summary>Condition order creation</summary>
 
-### **Parameters**&#x20;
+#### **Parameters**
 
-****
+***
 
 **Header**
 
-X-CH-SIGN                                  string                                                     Sign&#x20;
+X-CH-SIGN string Sign
 
-X-CH-APIKEY                              string                                                     Your API-key&#x20;
+X-CH-APIKEY string Your API-key
 
-X-CH-TS                                      integer                                                   timestamp
+X-CH-TS integer timestamp
 
-#### Body
+**Body**
 
-volume                  number           Order quantity
+volume number Order quantity
 
-price                      number          Order price
+price number Order price
 
-contractName       string              Contract name E.g. `E-BTC-USDT`
+contractName string Contract name E.g. `E-BTC-USDT`
 
-type                       string              Order type, `LIMIT/MARKET`
+type string Order type, `LIMIT/MARKET`
 
-side                       string               trade direction, `BUY/SELL`
+side string trade direction, `BUY/SELL`
 
-open                      string               Open balancing direction, `OPEN/CLOSE`
+open string Open balancing direction, `OPEN/CLOSE`
 
-positionType         number            Hold-up position, 1 Full position 2 restrictive position
+positionType number Hold-up position, 1 Full position 2 restrictive position
 
-triggerPrice           string               trigger price
+triggerPrice string trigger price
 
-triggerType            string              trigger type `3UP/4DOWN`
+triggerType string trigger type `3UP/4DOWN`
 
-#### Responses
+**Responses**
 
-* 200                                           OK
+* 200 OK
 
 ```
 {
@@ -416,23 +412,23 @@ triggerType            string              trigger type `3UP/4DOWN`
 
 <summary>Cancel order</summary>
 
-### **Parameters**&#x20;
+#### **Parameters**
 
 **Header**
 
-X-CH-SIGN                                  string                                                     Sign&#x20;
+X-CH-SIGN string Sign
 
-X-CH-APIKEY                              string                                                     Your API-key&#x20;
+X-CH-APIKEY string Your API-key
 
-X-CH-TS                                      integer                                                   timestamp
+X-CH-TS integer timestamp
 
-#### Body
+**Body**
 
-orderId                   string               Order ID
+orderId string Order ID
 
-contractName       string               Contract name E.g. `E-BTC-USDT`
+contractName string Contract name E.g. `E-BTC-USDT`
 
-#### Responses
+**Responses**
 
 * 200
 
@@ -448,13 +444,13 @@ contractName       string               Contract name E.g. `E-BTC-USDT`
 
 <summary>Order details</summary>
 
-### Parameters
+#### Parameters
 
-#### Body
+**Body**
 
-contractName       string   &#x20;
+contractName string
 
-#### Responses
+**Responses**
 
 * 200
 
@@ -474,7 +470,6 @@ contractName       string   &#x20;
        "status": "INIT"
     }
 ]
-
 
 ```
 
@@ -503,23 +498,23 @@ contractName       string   &#x20;
 **Speed limit rules:**\
 **Obtain open contract, the user's current order**
 
-### **Parameters**
+#### **Parameters**
 
-**Query**&#x20;
+**Query**
 
-contractName                string           Contract name `E-BTC-USDT`&#x20;
+contractName string Contract name `E-BTC-USDT`
 
 **Header**
 
-X-CH-SIGN                                  string                                                     Sign&#x20;
+X-CH-SIGN string Sign
 
-X-CH-APIKEY                              string                                                     Your API-key&#x20;
+X-CH-APIKEY string Your API-key
 
-X-CH-TS                                      integer                                                   timestamp
+X-CH-TS integer timestamp
 
-#### Responses:
+**Responses:**
 
-* 200&#x20;
+* 200
 
 ```
 [
@@ -537,7 +532,6 @@ X-CH-TS                                      integer                            
        "status": "INIT"
     }
 ]
-
 ```
 
 </details>
@@ -562,29 +556,29 @@ X-CH-TS                                      integer                            
 
 <summary>Order history</summary>
 
-### **Parameters**
+#### **Parameters**
 
 **Header:**
 
-X-CH-SIGN                                  string                                                     Sign&#x20;
+X-CH-SIGN string Sign
 
-X-CH-APIKEY                              string                                                     Your API-key&#x20;
+X-CH-APIKEY string Your API-key
 
-X-CH-TS                                      integer                                                   timestamp
+X-CH-TS integer timestamp
 
-#### **Body**
+**Body**
 
-**Query**&#x20;
+**Query**
 
-contractName                string           Contract name `E-BTC-USDT`&#x20;
+contractName string Contract name `E-BTC-USDT`
 
-limit                                 string           Lines per page, default 100, max 1000
+limit string Lines per page, default 100, max 1000
 
-fromID                             long             Start retrieving from this Id
+fromID long Start retrieving from this Id
 
-#### Responses:
+**Responses:**
 
-* 200                    **OK**
+* 200 **OK**
 
 ```
 [
@@ -620,27 +614,27 @@ fromID                             long             Start retrieving from this I
 
 <summary>Profit history</summary>
 
-### Parameters
+#### Parameters
 
-#### Header&#x20;
+**Header**
 
-X-CH-SIGN                                  string                                                     Sign&#x20;
+X-CH-SIGN string Sign
 
-X-CH-APIKEY                              string                                                     Your API-key&#x20;
+X-CH-APIKEY string Your API-key
 
-X-CH-TS                                      integer                                                   timestamp
+X-CH-TS integer timestamp
 
-#### Body
+**Body**
 
-contractName                string           Contract name `E-BTC-USDT`&#x20;
+contractName string Contract name `E-BTC-USDT`
 
-limit                                 string           Lines per page, default 100, max 1000
+limit string Lines per page, default 100, max 1000
 
-fromID                             long             Start retrieving from this Id
+fromID long Start retrieving from this Id
 
-#### Responses:
+**Responses:**
 
-* 200                        OK
+* 200 OK
 
 ```
 [
@@ -676,25 +670,25 @@ fromID                             long             Start retrieving from this I
 
 **Parameters**
 
-#### **Query**&#x20;
+**Query**
 
-contractName                string           Contract name `E-BTC-USDT`&#x20;
+contractName string Contract name `E-BTC-USDT`
 
-limit                                 string           Lines per page, default 100, max 1000
+limit string Lines per page, default 100, max 1000
 
-fromID                             long             Start retrieving from this Id
+fromID long Start retrieving from this Id
 
-#### Header&#x20;
+**Header**
 
-X-CH-SIGN                                  string                                                     Sign&#x20;
+X-CH-SIGN string Sign
 
-X-CH-APIKEY                              string                                                     Your API-key&#x20;
+X-CH-APIKEY string Your API-key
 
-X-CH-TS                                      integer                                                   timestamp
+X-CH-TS integer timestamp
 
 **Responses**
 
-* 200&#x20;
+* 200
 
 ```
 [
@@ -715,25 +709,23 @@ X-CH-TS                                      integer                            
 
 </details>
 
-
-
-| Name         | Type    | Example            | Description                                         |
-| ------------ | ------- | ------------------ | --------------------------------------------------- |
-| symbol       | string  | ETHBTC             | Coin name(trade pair)                               |
-| tradeId      | number  | 28457              | Trade ID                                            |
-| bidid        | long    | 150695552109032492 | Buyer order ID                                      |
-| askid        | long    | 150695552109032493 | Seller order ID                                     |
-| bidUserId    | integer | 10024              | Buyer user ID                                       |
-| askUserId    | integer | 10025              | Seller user ID                                      |
-| price        | float   | 4.01               | Filled price                                        |
-| qty          | float   | 12                 | Trade quantity                                      |
-| amount       | float   | 5.38               | Filled amount                                       |
-| time         | number  | 1499865549590      | Trade time stamp                                    |
-| fee          | number  | 0.001              | Trading fees                                        |
-| side         | string  | buy                | Current order direction BUY purchase, SELL  selling |
-| contractName | string  | E-BTC-USDT         | Contract name                                       |
-| isMaker      | Boolean | true               | is it maker?                                        |
-| isBuyer      | Boolean | true               | is it buyer?                                        |
+| Name         | Type    | Example            | Description                                        |
+| ------------ | ------- | ------------------ | -------------------------------------------------- |
+| symbol       | string  | ETHBTC             | Coin name(trade pair)                              |
+| tradeId      | number  | 28457              | Trade ID                                           |
+| bidid        | long    | 150695552109032492 | Buyer order ID                                     |
+| askid        | long    | 150695552109032493 | Seller order ID                                    |
+| bidUserId    | integer | 10024              | Buyer user ID                                      |
+| askUserId    | integer | 10025              | Seller user ID                                     |
+| price        | float   | 4.01               | Filled price                                       |
+| qty          | float   | 12                 | Trade quantity                                     |
+| amount       | float   | 5.38               | Filled amount                                      |
+| time         | number  | 1499865549590      | Trade time stamp                                   |
+| fee          | number  | 0.001              | Trading fees                                       |
+| side         | string  | buy                | Current order direction BUY purchase, SELL selling |
+| contractName | string  | E-BTC-USDT         | Contract name                                      |
+| isMaker      | Boolean | true               | is it maker?                                       |
+| isBuyer      | Boolean | true               | is it buyer?                                       |
 
 ## Account <a href="#zhang-hu" id="zhang-hu"></a>
 
@@ -745,19 +737,19 @@ All interfaces under the account require [signature and API-key verification​.
 
 <summary>Account info</summary>
 
-### Parameters
+#### Parameters
 
-#### Header
+**Header**
 
-X-CH-SIGN                                  string                                                     Sign&#x20;
+X-CH-SIGN string Sign
 
-X-CH-APIKEY                              string                                                     Your API-key&#x20;
+X-CH-APIKEY string Your API-key
 
-X-CH-TS                                      integer                                                   timestamp
+X-CH-TS integer timestamp
 
-#### Responses
+**Responses**
 
-* 200&#x20;
+* 200
 
 ```
 {
@@ -827,15 +819,13 @@ X-CH-TS                                      integer                            
 
 </details>
 
-Response:&#x20;
+Response:
 
-| Name     | Type | Description        |
-| -------- | ---- | ------------------ |
-| account  | \[]  | Balance collection |
+| Name    | Type | Description        |
+| ------- | ---- | ------------------ |
+| account | \[]  | Balance collection |
 
 #### `account` field:
-
-
 
 | Name                | Type   | Example | Description                        |
 | ------------------- | ------ | ------- | ---------------------------------- |
