@@ -1,6 +1,4 @@
-# Exchange doc
-
-### BASIC INFORMATION
+# Basic Information
 
 ## API Basic Information <a href="#api-basic-information" id="api-basic-information"></a>
 
@@ -16,7 +14,7 @@
 * HTTP `418` return code is used when an IP has been auto-banned for continuing to send requests after receiving `429` codes.
 * HTTP `5XX` return codes are used for internal errors
 * HTTP `504` return code is used when the API successfully sent the message but not get a response within the timeout period. It is important to **NOT** treat this as a failure operation; the execution status is **UNKNOWN** and could have been a success.
-* All endpoints can possibly return an ERROR, the error payload is as follows:&#x20;
+* All endpoints can possibly return an ERROR, the error payload is as follows:
 
 ```
 {
@@ -24,8 +22,6 @@
   "msg": "Invalid symbol."
 }
 ```
-
-
 
 ## General Information
 
@@ -58,7 +54,7 @@
 
 * When calling the `TRADE` or `USER_DATA` interface, the signature parameter should be passed in the `X-CH-SIGN` field in the HTTP header.
 * The signature uses the `HMAC SHA256` algorithm. The `API-Secret` corresponding to the API-KEY is used as the `HMAC SHA256` key.
-* The request header of `X-CH-SIGN` is based on `timestamp` + `method` + `requestPath` + `body string`  (+ means string connection) as the operation object
+* The request header of `X-CH-SIGN` is based on `timestamp` + `method` + `requestPath` + `body string` (+ means string connection) as the operation object
 * The value of `timestamp` is the same as the `X-CH-TS` request header, `method` is the request method, and the letters are all uppercase: `GET/POST`
 * `requestPath` is the request interface path For example: `/sapi/v1/order`
 * `body` is the string of the request body (post only)
@@ -79,9 +75,7 @@ if (timestamp < (serverTime + 1000) && (serverTime - timestamp) <= recvWindow) {
 }
 ```
 
-
-
-**Serious trading is about timing.**  Networks can be unstable and unreliable, which can lead to requests taking varying amounts of time to reach the servers. With `recvWindow`, you can specify that the request must be processed within a certain number of milliseconds or be rejected by the server.&#x20;
+**Serious trading is about timing.** Networks can be unstable and unreliable, which can lead to requests taking varying amounts of time to reach the servers. With `recvWindow`, you can specify that the request must be processed within a certain number of milliseconds or be rejected by the server.
 
 **It recommended to use a small recvWindow of 5000 or less!**
 
@@ -117,7 +111,7 @@ Here is a step-by-step example of how to send a vaild signed payload from the Li
 (stdin)= c50d0a74bb9427a9a03933d0eded03af9bf50115dc5b706882a4fcf07a26b761
 ```
 
-* **Curl command:**&#x20;
+* **Curl command:**
 
 ```
   (HMAC SHA256)

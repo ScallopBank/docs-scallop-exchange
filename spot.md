@@ -115,7 +115,7 @@ sdk:[https://github.com/exchange2021/openapidemo/blob/master/src/main/java/com/s
 
 ## Market
 
-### Security Type: [None](broken-reference/)
+### Security Type: [None](exchange-doc/broken-reference/)
 
 **Market** section can be accessed freely without requiring any API-key or signatures.
 
@@ -295,9 +295,9 @@ limit-integer-Default 100;MAX 300
 
 ## Trade
 
-### Security Type: [TRADE](broken-reference/)
+### Security Type: [TRADE](exchange-doc/broken-reference/)
 
-Endpoints under **Trade** require an [API-key and a signature.](broken-reference/)
+Endpoints under **Trade** require an [API-key and a signature.](exchange-doc/broken-reference/)
 
 <details>
 
@@ -750,9 +750,9 @@ X-CH-TS integer timestamp
 
 ## Account
 
-### Security Type:[ USER\_DATA](broken-reference/)
+### Security Type:[ USER\_DATA](exchange-doc/broken-reference/)
 
-Endpoints under Account require an [API-key and a signature.](broken-reference/)
+Endpoints under Account require an [API-key and a signature.](exchange-doc/broken-reference/)
 
 <details>
 

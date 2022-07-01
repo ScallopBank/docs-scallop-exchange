@@ -2,7 +2,7 @@
 
 ## Public
 
-### Security: [None](broken-reference/)
+### Security: [None](exchange-doc/broken-reference/)
 
 Endpoints under **Public** section can be accessed freely without requiring any API-key or signatures.
 

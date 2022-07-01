@@ -2,9 +2,9 @@
 
 ## Trade
 
-### Security Type: [TRADE](broken-reference/)
+### Security Type: [TRADE](exchange-doc/broken-reference/)
 
-Endpoints under **Trade** require an [API-key and a signature.​](broken-reference/)
+Endpoints under **Trade** require an [API-key and a signature.​](exchange-doc/broken-reference/)
 
 <details>
 
